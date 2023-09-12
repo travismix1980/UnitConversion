@@ -1,0 +1,18 @@
+﻿@page "/onewayconverter"
+
+<h3>Convert Inches to Centimeters</h3>
+
+<input value="@inches" type="number" @onchange="UpdateValue"/>
+<p>The value of inches is @inches</p>
+
+
+@code {
+    double inches = 1;
+
+    void UpdateValue(ChangeEventArgs e)
+    {
+        double val = 0;
+        double.TryParse(e.Value.ToString(), out val);
+        inches = val;
+    }
+}
